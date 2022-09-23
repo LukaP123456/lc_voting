@@ -7,6 +7,9 @@
 
     <title>Laracast voting</title>
 
+    <!--Livewire-->
+    @livewireStyles
+
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Open+Sans:wght@400;600;700&display=swap">
 
@@ -115,4 +118,8 @@
         </div>
     </div>
 </main>
-</body></html>
+<!--livewire script-->
+@livewireScripts
+
+</body>
+</html>
