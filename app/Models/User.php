@@ -59,9 +59,14 @@ class User extends Authenticatable
             . '.png';
     }
 
-    protected function ideas()
+    public function ideas()
     {
         return $this->hasMany(Idea::class);
+    }
+
+    public function votes()
+    {
+        return $this->belongsToMany(Idea::class,'votes');
     }
 
 }
