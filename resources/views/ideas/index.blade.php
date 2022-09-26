@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout xmlns:livewire="idea-index">
     <div class="filters flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6">
         <div class="w-full md:w-1/3">
             <select name="category" id="category" class="w-full rounded-xl border-none px-4 py-2">
