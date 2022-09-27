@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Idea;
+use App\Models\User;
 use Livewire\Component;
 
 class IdeaIndex extends Component
@@ -17,6 +18,23 @@ class IdeaIndex extends Component
         $this->votesCount = $votesCount;
         $this->hasVoted = $idea->voted_by_user;
 
+    }
+
+    public function vote()
+    {
+        if (!auth()->check()) {
+            return redirect(route('login'));
+        }
+
+        if ($this->hasVoted) {
+            $this->idea->removeVote(auth()->user());
+            $this->votesCount--;
+            $this->hasVoted = false;
+        } else {
+            $this->idea->vote(auth()->user());
+            $this->votesCount++;
+            $this->hasVoted = true;
+        }
     }
 
     public function render()
