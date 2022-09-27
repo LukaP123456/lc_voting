@@ -143,7 +143,6 @@ class IdeaTest extends TestCase
             'description' => 'Description for my first idea',
         ]);
 
-
         $this->expectException(VoteNotFoundException::class);
 
         $idea->removeVote($user);
